@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Input, Button } from "antd";
 import { Link } from "react-router-dom";
+import { ArrowLeftOutlined } from "@ant-design/icons"; // Import back icon
 import loginImage from "../../assets/login_image.png";
 import logo from "../../assets/CGL.png";
 
@@ -20,14 +21,22 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6 w-full h-screen">
-      <div className="bg-white shadow-lg rounded-md flex w-full h-full overflow-hidden">
+      <div className="bg-white shadow-lg rounded-md flex w-full h-full overflow-hidden relative">
         {/* Left Side - Image */}
         <div className="w-1/2 h-full hidden md:block">
           <img src={loginImage} alt="Login Illustration" className="w-full h-full object-cover" />
         </div>
-        
+
         {/* Right Side - Login Form */}
-        <div className="w-full md:w-1/2 h-full p-8 flex flex-col justify-center items-center">
+        <div className="w-full md:w-1/2 h-full p-8 flex flex-col justify-center items-center relative">
+          {/* Back to Home Button at Top-Right with Better Visibility */}
+          <Link
+            to="/"
+            className="absolute top-4 right-4 text-blue-600 font-semibold hover:text-blue-800 text-lg flex items-center transition duration-200"
+          >
+            <ArrowLeftOutlined className="mr-2 text-xl" /> Home
+          </Link>
+
           <div className="flex justify-center mb-4">
             <img src={logo} alt="CGL Logo" className="h-24 w-24 rounded-full object-cover" />
           </div>
@@ -65,7 +74,7 @@ const Login = () => {
           </form>
 
           <p className="text-center mt-4">
-            Don't have an account? <Link to="/register" className="text-blue-600 font-semibold">Sign Up</Link>
+            Don't have an account? <Link to="/register" className="text-blue-600 font-semibold hover:text-blue-800">Sign Up</Link>
           </p>
         </div>
       </div>
