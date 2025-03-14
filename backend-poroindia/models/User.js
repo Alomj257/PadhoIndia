@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
         userType: { 
             type: String, 
             required: true, 
-            enum: ["USER", "ADMIN"] 
+            enum: ["STUDENT", "ADMIN"] 
         },
         resetOtp: { type: String },
         otpExpiry: { type: Date },
