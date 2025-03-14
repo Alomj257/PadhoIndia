@@ -1,11 +1,15 @@
 import React from "react";
 import { BookOutlined, TrophyOutlined } from "@ant-design/icons";
-
+import heroBg from "../../assets/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <section
       className="relative w-full h-screen bg-cover bg-center flex items-center text-white"
-      style={{ backgroundImage: "url('/src/assets/hero-bg.jpg')", backgroundColor: "rgba(0, 0, 0, 0.6)", backgroundBlendMode: "darken" }}
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        backgroundBlendMode: "darken",
+      }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
