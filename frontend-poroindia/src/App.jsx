@@ -1,12 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Suspense, lazy, useContext } from "react";
 import Loader from "./utils/Loader";
 import { Toaster } from "react-hot-toast";
+import NavigationDashboard from "./components/common/NavigationDashboard";
 import Navbar from "./components/common/Navbar";
 import ProtectedRoute from "./utils/ProtectedRoute";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider, AuthContext } from "./context/AuthContext";
 
-const Home = lazy(()=> import("./pages/Home"));
+const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./components/auth/Login"));
 const Register = lazy(() => import("./components/auth/Register"));
 const ForgotPassword = lazy(() => import("./components/auth/ForgotPassword"));
@@ -15,24 +16,37 @@ const ConfirmOtp = lazy(() => import("./components/auth/ConfirmOtp"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
 const UserDashboard = lazy(() => import("./pages/user/UserDashboard"));
 
+const AppContent = () => {
+  const { user } = useContext(AuthContext);
+  const location = useLocation(); // Get current route
+  const hideNavbarRoutes = ["/login", "/register", "/forgot-password", "/reset-password", "/confirm-otp"];
+
+  return (
+    <>
+      <Toaster />
+      {!user && !hideNavbarRoutes.includes(location.pathname) ? <Navbar /> : user && <NavigationDashboard />}
+      
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/confirm-otp" element={<ConfirmOtp />} />
+          <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
+        </Routes>
+      </Suspense>
+    </>
+  );
+};
+
 const App = () => {
   return (
-    <Router> {/* Router should wrap everything */}
-      <AuthProvider> {/* AuthProvider is now inside Router */}
-        <Toaster />
-        <Navbar />
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/confirm-otp" element={<ConfirmOtp />} />
-            <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-            <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
-          </Routes>
-        </Suspense>
+    <Router>
+      <AuthProvider>
+        <AppContent />
       </AuthProvider>
     </Router>
   );
