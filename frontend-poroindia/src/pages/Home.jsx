@@ -1,9 +1,12 @@
 import React from 'react'
+import HeroSection from '../components/common/HeroSection'
 
 const Home = () => {
   return (
     <div>
-        <h1>Hello India</h1>
+        <>
+        <HeroSection/>
+        </>
     </div>
   )
 }

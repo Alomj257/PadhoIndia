@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md py-4 px-6 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white py-4 px-6 fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Side - Logo */}
         <div className="text-2xl font-bold text-indigo-600">
@@ -14,8 +14,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          onClick={() => setIsOpen(true)} 
+        <button
+          onClick={() => setIsOpen(true)}
           className="md:hidden text-indigo-600 focus:outline-none"
         >
           <Menu size={28} />
@@ -32,14 +32,14 @@ const Navbar = () => {
 
         {/* Right Side - Login Button */}
         <div className="hidden md:block">
-          <Link to="/login" className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-700 transition">
+          <Link to="/login" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
             Login
           </Link>
         </div>
       </div>
 
-      {/* Mobile Menu (Sliding in from Right with More Width) */}
-      <div className={`fixed top-0 right-0 h-full w-3/4 bg-white shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
+      {/* Mobile Menu (Sliding from Right to Left with Full Width) */}
+      <div className={`fixed top-0 right-0 h-full w-full bg-white transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
         {/* Close Button */}
         <div className="flex justify-end p-4">
           <button onClick={() => setIsOpen(false)} className="text-indigo-600">
