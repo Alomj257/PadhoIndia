@@ -20,13 +20,16 @@ const UserDashboard = lazy(() => import("./pages/user/UserDashboard"));
 const AppContent = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation(); // Get current route
+
   const hideNavbarRoutes = ["/login", "/register", "/forgot-password", "/reset-password", "/confirm-otp"];
+  
+  const shouldHideFooter = hideNavbarRoutes.includes(location.pathname);
 
   return (
     <>
       <Toaster />
       {!user && !hideNavbarRoutes.includes(location.pathname) ? <Navbar /> : user && <NavigationDashboard />}
-      
+
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,7 +42,8 @@ const AppContent = () => {
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
         </Routes>
       </Suspense>
-      <Footer/>
+
+      {!shouldHideFooter && <Footer />} 
     </>
   );
 };
