@@ -4,6 +4,7 @@ import Loader from "./utils/Loader";
 import { Toaster } from "react-hot-toast";
 import NavigationDashboard from "./components/common/NavigationDashboard";
 import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 
@@ -38,6 +39,7 @@ const AppContent = () => {
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
         </Routes>
       </Suspense>
+      <Footer/>
     </>
   );
 };

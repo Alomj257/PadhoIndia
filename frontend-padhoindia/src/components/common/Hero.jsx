@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";  // Import Link component
 import heroImage from "../../assets/hero.jpg";
 
 const Hero = () => {
@@ -16,8 +17,8 @@ const Hero = () => {
         
         <div className="text-center px-6 md:px-12 lg:px-20 max-w-4xl mx-auto">
           
-          {/* Modern Heading */}
-          <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+          {/* Modern Heading with smaller text on mobile */}
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
             Unlock <span className="text-yellow-400">Free Education</span> <br />
             Through <span className="text-blue-400">Scholarships</span>
           </h1>
@@ -31,12 +32,17 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-yellow-400 text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-yellow-500 hover:scale-105 transition-transform duration-300">
-              Explore Tests
-            </button>
-            <button className="bg-blue-500 text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-blue-600 hover:scale-105 transition-transform duration-300">
-              Login to Dashboard
-            </button>
+            <Link to="/scholarship" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto bg-yellow-400 text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-yellow-500 hover:scale-105 transition-transform duration-300">
+                Explore Tests
+              </button>
+            </Link>
+
+            <Link to="/login" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto bg-blue-500 text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-blue-600 hover:scale-105 transition-transform duration-300">
+                Login to Dashboard
+              </button>
+            </Link>
           </div>
 
         </div>
