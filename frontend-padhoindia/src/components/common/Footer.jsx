@@ -45,15 +45,15 @@ const Footer = () => {
               <div className="flex flex-col gap-2 mt-4 text-gray-600 text-sm">
                 <div className="flex items-center gap-2">
                   <FaPhone className="text-blue-500" />
-                  <span>+1 (123) 456-7890</span>
+                  <span>+91 9123744290</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaEnvelope className="text-blue-500" />
-                  <span>info@scholarship.com</span>
+                  <span>info@padhoindia.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaMapMarkerAlt className="text-blue-500" />
-                  <span>123 Scholarship Lane, New York, NY 10001</span>
+                  <span>Kolkata, West Bengal, India, 700125</span>
                 </div>
               </div>
             </div>

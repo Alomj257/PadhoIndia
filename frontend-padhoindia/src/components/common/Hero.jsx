@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";  // Import Link component
+import { Link } from "react-router-dom";
 import heroImage from "../../assets/hero1.jpg";
 
 const Hero = () => {
   return (
     <div
-      className="relative h-[90vh] bg-no-repeat bg-cover bg-center"  // Reduced height to 70vh
+      className="relative h-[90vh] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
@@ -26,7 +26,7 @@ const Hero = () => {
           {/* Elegant Description */}
           <p className="text-gray-300 text-sm md:text-lg lg:text-xl mb-8 leading-relaxed">
             Personalized tests for{" "}
-            <span className="text-yellow-300 font-medium">Class 5 to 12</span>.  
+            <span className="text-yellow-300 font-medium">Class 1 to 12</span>.  
             Achieve your academic dreams with a scholarship-backed learning platform.
           </p>
 
