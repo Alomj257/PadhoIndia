@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { Avatar, Dropdown, Menu, Drawer } from "antd";
 import { LogoutOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 import DrawerComponent from "../../utils/DrawerComponent";
+import logo from "../../assets/tp_logo.png";
 
 const NavigationDashboard = () => {
     const { user, logout } = useContext(AuthContext);
@@ -46,8 +47,10 @@ const NavigationDashboard = () => {
                     )}
 
                     {/* Logo */}
-                    <div className="text-xl font-bold">
-                        <Link to="/" className="hover:text-gray-300 transition">Poro India</Link>
+                    <div className="flex items-center">
+                        <Link to="/">
+                            <img src={logo} alt="Logo" className="h-14 w-auto" /> 
+                        </Link>
                     </div>
                 </div>
 

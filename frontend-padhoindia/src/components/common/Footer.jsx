@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import logo from "../../assets/CGL.png"; // Replace with your logo path
 
 const Footer = () => {
@@ -21,23 +21,41 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Section: Navigation & Socials */}
+          {/* Right Section: Navigation, Contact Info & Socials */}
           <div className="flex flex-col md:flex-row items-center gap-8">
             
             {/* Navigation Links */}
-            <div className="flex gap-6">
-              <Link to="/" className="text-gray-600 hover:text-blue-500 transition-colors">
-                Home
-              </Link>
-              <Link to="/about" className="text-gray-600 hover:text-blue-500 transition-colors">
-                About
-              </Link>
-              <Link to="/scholarship" className="text-gray-600 hover:text-blue-500 transition-colors">
-                Scholarships
-              </Link>
-              <Link to="/contact" className="text-gray-600 hover:text-blue-500 transition-colors">
-                Contact
-              </Link>
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-6">
+                <Link to="/" className="text-gray-600 hover:text-blue-500 transition-colors">
+                  Home
+                </Link>
+                <Link to="/about" className="text-gray-600 hover:text-blue-500 transition-colors">
+                  About
+                </Link>
+                <Link to="/scholarship" className="text-gray-600 hover:text-blue-500 transition-colors">
+                  Scholarships
+                </Link>
+                <Link to="/contact" className="text-gray-600 hover:text-blue-500 transition-colors">
+                  Contact
+                </Link>
+              </div>
+
+              {/* Contact Info Below Navigation Links */}
+              <div className="flex flex-col gap-2 mt-4 text-gray-600 text-sm">
+                <div className="flex items-center gap-2">
+                  <FaPhone className="text-blue-500" />
+                  <span>+1 (123) 456-7890</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaEnvelope className="text-blue-500" />
+                  <span>info@scholarship.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaMapMarkerAlt className="text-blue-500" />
+                  <span>123 Scholarship Lane, New York, NY 10001</span>
+                </div>
+              </div>
             </div>
 
             {/* Social Media Icons */}

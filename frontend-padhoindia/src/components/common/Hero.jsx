@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";  // Import Link component
-import heroImage from "../../assets/hero.jpg";
+import heroImage from "../../assets/hero1.jpg";
 
 const Hero = () => {
   return (
     <div
-      className="relative min-h-screen bg-no-repeat bg-cover bg-center"
+      className="relative h-[90vh] bg-no-repeat bg-cover bg-center"  // Reduced height to 70vh
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
