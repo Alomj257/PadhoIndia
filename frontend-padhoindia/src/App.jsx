@@ -7,6 +7,8 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
+import Scholarship from "./pages/Scholarship";
+import ScholarshipDetails from "./components/common/ScholarshipDetails";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./components/auth/Login"));
@@ -38,6 +40,10 @@ const AppContent = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/confirm-otp" element={<ConfirmOtp />} />
+
+          <Route path="/scholarship" element={<Scholarship />} />
+          <Route path="/scholarship/:id" element={<ScholarshipDetails />} />
+
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
         </Routes>
