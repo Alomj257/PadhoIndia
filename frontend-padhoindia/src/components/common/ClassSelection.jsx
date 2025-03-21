@@ -52,7 +52,7 @@ const ClassSelection = () => {
                     <span className="block sm:inline">Padho India Scholarship</span>
                 </h1>
                 <p className="text-sm sm:text-base text-gray-600 mt-2">
-                    Achieve your dreams with <span className="font-semibold text-yellow-400">100% free education</span>. 
+                    Achieve your dreams with <span className="font-semibold text-yellow-400">100% free education</span>.
                     Enroll now for the <span className="text-blue-500">2025-2026 session!</span>
                 </p>
             </div>
@@ -73,8 +73,11 @@ const ClassSelection = () => {
 
             {/* Fee Section */}
             <div className="text-center mt-10">
-                <p className="text-sm sm:text-base font-medium text-gray-700 inline">Fee</p>
-                <span className="text-2xl sm:text-3xl font-bold text-red-500 ml-2">₹99</span>
+                <p className="text-sm sm:text-base font-medium text-gray-700 inline relative">
+                    <span className="line-through">₹99</span>
+                </p>
+
+                <span className="text-2xl sm:text-3xl font-bold text-red-500 ml-2">Free</span>
                 <p className="text-gray-500 text-sm">Includes all taxes & charges</p>
 
                 {/* Additional Text */}
