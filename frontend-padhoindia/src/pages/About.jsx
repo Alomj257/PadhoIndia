@@ -6,7 +6,7 @@ const { Title, Paragraph } = Typography;
 
 const boardMembers = [
     {
-        name: "Rohit Sharma",
+        name: "Mr. Kalim Khan",
         position: "Founder & CEO",
         image: "https://randomuser.me/api/portraits/men/1.jpg",
         linkedin: "#",
@@ -14,7 +14,7 @@ const boardMembers = [
         email: "rohit@padhoindia.com"
     },
     {
-        name: "Priya Verma",
+        name: "Jahangir Alom",
         position: "COO",
         image: "https://randomuser.me/api/portraits/women/2.jpg",
         linkedin: "#",
@@ -42,7 +42,7 @@ const galleryImages = [
 
 const AboutPage = () => {
     return (
-        <div className="bg-white min-h-screen p-8">
+        <div className="bg-white min-h-screen p-4">
 
             {/* Main Layout */}
             <Row gutter={[24, 24]}>
@@ -52,15 +52,16 @@ const AboutPage = () => {
                     <div className="bg-gradient-to-r from-blue-100 to-blue-300 text-center p-10 rounded-lg shadow-lg">
                         <Title level={2} className="text-3xl font-semibold text-blue-700">About Padho India</Title>
                         <Paragraph className="mt-4 text-lg leading-relaxed text-gray-800">
-                        Padho India is a revolutionary educational initiative committed to making quality education accessible to every child, regardless of their financial background. Our mission is to empower students with free online tuition, ensuring that financial constraints do not hinder their learning journey.
+                            Padho India is a revolutionary educational initiative committed to making quality education accessible to every child, regardless of their financial background. Our mission is to empower students with free online tuition, ensuring that financial constraints do not hinder their learning journey.
                         </Paragraph>
                         <Paragraph className="mt-4 text-lg leading-relaxed text-gray-800">
-                        We believe that education is the key to unlocking a brighter future. Through Padho India, we offer free online classes covering all subjects for students from Class 5 to 12. Our platform provides comprehensive learning resources, including live interactive sessions, practical classes, and expert guidance to help students excel academically.
+                            We believe that education is the key to unlocking a brighter future. Through Padho India, we offer free online classes covering all subjects for students from Class 5 to 12. Our platform provides comprehensive learning resources, including live interactive sessions, practical classes, and expert guidance to help students excel academically.
                         </Paragraph>
                         <Paragraph className="mt-4 text-lg leading-relaxed text-gray-800">At Padho India, we understand the aspirations of parents who dream of seeing their children become successful professionals in fields like IT, engineering, and medicine. To support these dreams, we provide free training programs in engineering, software development, and other in-demand sectors. Our goal is to bridge the gap between talent and opportunity by offering accessible and high-quality education </Paragraph>
                         <Paragraph className="mt-4 text-lg leading-relaxed text-gray-800">In addition to empowering students, Padho India also supports junior advocates by arranging financial assistance. This helps them remain dedicated to their legal profession without being burdened by financial struggles</Paragraph>
                         <Paragraph className="mt-4 text-lg leading-relaxed text-gray-800">Padho India is not just an educational platform—it is a movement dedicated to building a stronger, smarter, and brighter nation by ensuring that every child has the opportunity to learn, grow, and succeed.</Paragraph>
-                        <Paragraph className="text-sm">Thank you </Paragraph>
+                        <Paragraph className="mt-4 leading-relaxed text-gray-800">চলুন আমরা এবং আপনারা মিলে সেই সমস্ত ফুটফুটে বাচ্চাদের ভবিষ্যৎ গড়ে তুলি, যারা আমাদের দেশের সম্পদ. আমাদের দেশের স্তম্ভ এবং আমাদের দেশের ভবিষ্যৎ,.
+                        </Paragraph>
                     </div>
                 </Col>
 
@@ -119,28 +120,27 @@ const AboutPage = () => {
                     <Title level={4} className="text-center text-blue-600 text-xl mb-4">Board of Members</Title>
                     <Row gutter={[24, 24]} justify="center">
                         {boardMembers.map((member, index) => (
-                            <Col xs={24} md={8} key={index}>
-                                <div className="text-center bg-gray-50 p-6 rounded-lg shadow-md transition hover:shadow-lg">
-                                    <Avatar size={80} src={member.image} className="mb-4" />
-                                    <Title level={5} className="text-md">{member.name}</Title>
-                                    <Paragraph className="text-gray-500 text-sm">{member.position}</Paragraph>
-                                    <div className="flex justify-center space-x-4 mt-3">
-                                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                                            <FaLinkedin className="text-blue-500 text-xl hover:scale-105 transition" />
-                                        </a>
-                                        <a href={member.twitter} target="_blank" rel="noopener noreferrer">
-                                            <FaTwitter className="text-blue-400 text-xl hover:scale-105 transition" />
-                                        </a>
-                                        <a href={`mailto:${member.email}`}>
-                                            <FaEnvelope className="text-red-500 text-xl hover:scale-105 transition" />
-                                        </a>
-                                    </div>
+                            <Col xs={24} md={8} key={index} className="text-center">
+                                <Avatar size={80} src={member.image} className="mb-4" />
+                                <Title level={5} className="text-md">{member.name}</Title>
+                                <Paragraph className="text-gray-500 text-sm">{member.position}</Paragraph>
+                                <div className="flex justify-center space-x-4 mt-3">
+                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                                        <FaLinkedin className="text-blue-500 text-xl hover:scale-105 transition" />
+                                    </a>
+                                    <a href={member.twitter} target="_blank" rel="noopener noreferrer">
+                                        <FaTwitter className="text-blue-400 text-xl hover:scale-105 transition" />
+                                    </a>
+                                    <a href={`mailto:${member.email}`}>
+                                        <FaEnvelope className="text-red-500 text-xl hover:scale-105 transition" />
+                                    </a>
                                 </div>
                             </Col>
                         ))}
                     </Row>
                 </div>
             </div>
+
 
             {/* Gallery */}
             <div className="bg-white py-12 px-6">
