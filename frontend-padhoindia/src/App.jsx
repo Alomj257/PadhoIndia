@@ -9,6 +9,9 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import Scholarship from "./pages/Scholarship";
 import ScholarshipDetails from "./components/common/ScholarshipDetails";
+import About from "./pages/About";
+import Events from "./pages/Events";
+import ContactUs from "./pages/ContactUs";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./components/auth/Login"));
@@ -43,6 +46,12 @@ const AppContent = () => {
 
           <Route path="/scholarship" element={<Scholarship />} />
           <Route path="/scholarship/:id" element={<ScholarshipDetails />} />
+
+          <Route path="/about" element={<About />} />
+
+          <Route path="/events" element={<Events />} />
+
+          <Route path="/contact" element={<ContactUs />} />
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
