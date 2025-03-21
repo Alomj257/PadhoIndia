@@ -9,7 +9,16 @@ const scholarships = [
     amount: "$5,000",
     eligibility: "Class 10, 11, 12",
     deadline: "April 15, 2025",
-    exam: ["GK", "Maths", "Science"],
+    exam: ["General Knowledge", "Mathematics", "Science"],
+    description: `The STEM Excellence Scholarship is aimed at supporting students 
+    excelling in science, technology, engineering, and mathematics. It provides financial 
+    assistance to cover tuition fees, living expenses, and includes mentorship programs 
+    with industry experts. This scholarship is perfect for students pursuing careers 
+    in scientific research, technology, and engineering.`,
+    documents: ["Transcripts", "Resume", "Recommendation Letter"],
+    process: "Apply online through the official website and submit the required documents.",
+    terms: "Recipients must maintain a GPA of 3.0 or higher.",
+    contact: "support@scholarships.com",
   },
   {
     id: 2,
@@ -17,7 +26,16 @@ const scholarships = [
     amount: "$3,000",
     eligibility: "Class 8, 9, 10",
     deadline: "May 10, 2025",
-    exam: ["GK", "English", "Reasoning"],
+    exam: ["English", "Reasoning", "Current Affairs"],
+    description: `The Future Leaders Grant aims to identify and support students with 
+    outstanding leadership potential. It offers financial aid and access to leadership 
+    workshops, mentorship, and networking opportunities with industry leaders. 
+    This grant empowers young students to develop their leadership skills and make 
+    a positive impact in their communities.`,
+    documents: ["Resume", "Leadership Essay"],
+    process: "Submit your application with supporting documents online.",
+    terms: "Only students with verified leadership activities are eligible.",
+    contact: "leaders@scholarships.com",
   },
 ];
 
@@ -25,35 +43,42 @@ const ScholarshipList = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="max-w-6xl mx-auto p-4 md:p-8">
       {scholarships.map((scholarship) => (
         <Card
           key={scholarship.id}
-          title={`🎓 ${scholarship.title}`}
-          className="shadow-lg rounded-lg hover:shadow-2xl transition"
-          extra={<Tag color="blue">{scholarship.amount}</Tag>}
+          className="mb-6 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+          bodyStyle={{ display: "flex", flexDirection: "column" }}
         >
-          <p className="text-gray-700">
-            <strong>Eligibility:</strong> {scholarship.eligibility}
-          </p>
-          <p className="text-gray-500">
-            <strong>Deadline:</strong> {scholarship.deadline}
-          </p>
-          <div className="mt-4">
-            {scholarship.exam.map((subject, index) => (
-              <Tag color="green" key={index}>
-                {subject}
-              </Tag>
-            ))}
-          </div>
-          <div className="flex justify-between mt-4">
-            <Button
-              type="primary"
-              onClick={() => navigate(`/scholarship/${scholarship.id}`)}
-            >
-              View Details
-            </Button>
-            <Button type="default">Apply Now</Button>
+          <div className="md:flex md:items-center justify-between">
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold mb-2">{scholarship.title}</h2>
+              <p className="text-gray-600">{scholarship.description.slice(0, 200)}...</p>
+
+              <div className="flex items-center gap-4 my-4 flex-wrap">
+                <Tag color="blue">{scholarship.amount}</Tag>
+                <Tag color="green">{scholarship.eligibility}</Tag>
+                <Tag color="red">Deadline: {scholarship.deadline}</Tag>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                {scholarship.exam.map((subject, index) => (
+                  <Tag color="purple" key={index}>
+                    {subject}
+                  </Tag>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 mt-4 md:mt-0">
+              <Button
+                type="primary"
+                onClick={() => navigate(`/scholarship/${scholarship.id}`)}
+              >
+                View Details
+              </Button>
+              <Button type="default">Apply Now</Button>
+            </div>
           </div>
         </Card>
       ))}
