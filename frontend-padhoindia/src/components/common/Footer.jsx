@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <FaEnvelope className="text-blue-500" />
-                  <span>info@padhoindia.com</span>
+                  <span>padoindia873@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaMapMarkerAlt className="text-blue-500" />
