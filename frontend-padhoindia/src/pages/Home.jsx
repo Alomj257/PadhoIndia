@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '../components/common/Hero'
 import Facilities from '../components/common/Facilities'
 import ClassSelection from '../components/common/ClassSelection'
+import PrizeList from '../components/common/PrizeList'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <Hero/>
         <Facilities/>
         <ClassSelection/>
+        <PrizeList/>
         </>
     </div>
   )

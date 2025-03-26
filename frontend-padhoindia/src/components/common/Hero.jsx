@@ -14,21 +14,26 @@ const Hero = () => {
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center">
-        
+
         <div className="text-center px-6 md:px-12 lg:px-20 max-w-4xl mx-auto">
-          
+
           {/* Modern Heading with smaller text on mobile */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
-            Unlock <span className="text-yellow-400">Free Education</span> <br />
-            Through <span className="text-blue-400">Scholarships</span>
-          </h1>
+          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-yellow-300 leading-relaxed mb-4">
+  JAY BANGLA SCHOLARSHIP SWARNA CUP
+</h1>
+
 
           {/* Elegant Description */}
           <p className="text-gray-300 text-sm md:text-lg lg:text-xl mb-8 leading-relaxed">
             Personalized tests for{" "}
-            <span className="text-yellow-300 font-medium">Class 1 to 12</span>.  
+            <span className="text-yellow-300 font-medium">Class 1 to 12</span>.
             Achieve your academic dreams with a scholarship-backed learning platform.
           </p>
+
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+            Unlock <span className="text-yellow-400">Free Education</span> <br />
+            Through <span className="text-blue-400">Scholarships</span>
+          </h1>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
