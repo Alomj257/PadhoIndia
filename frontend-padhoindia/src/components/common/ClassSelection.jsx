@@ -40,7 +40,7 @@ const ClassSelection = () => {
             {/* Top Motivational Text */}
             <div className="text-center max-w-4xl mb-6">
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
-                    চলুন আমরা এবং আপনারা মিলে আমাদের সেই সমস্ত ফুটফুটে বাচ্চাদের ভবিষ্যৎ গড়ে তুলুন যারা আমাদের দেশের সম্পদ, আমাদের দেশের স্তম্ভ এবং আমাদের দেশের ভবিষ্যৎ।
+                চলুন আমরা এবং আপনারা মিলে সেই সমস্ত ফুটফুটে বাচ্চাদের ভবিষ্যৎ গড়ে তুলি, যারা আমাদের দেশের সম্পদ. আমাদের দেশের স্তম্ভ এবং আমাদের দেশের ভবিষ্যৎ।
                     <br />
                     Let us and you together build the future of our children who are the resources of our country, the pillars of our country, and the future of our country.
                 </p>
@@ -74,7 +74,7 @@ const ClassSelection = () => {
             {/* Fee Section */}
             <div className="text-center mt-10">
                 <p className="text-sm sm:text-base font-medium text-gray-700 inline relative">
-                    <span className="line-through">₹99</span>
+                    <span className="line-through">₹9999</span>
                 </p>
 
                 <span className="text-2xl sm:text-3xl font-bold text-red-500 ml-2">Free</span>
