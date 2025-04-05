@@ -19,8 +19,8 @@ const Hero = () => {
 
           {/* Modern Heading with smaller text on mobile */}
           <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-yellow-300 leading-relaxed mb-4">
-  JAY BANGLA SCHOLARSHIP SWARNA CUP
-</h1>
+            PADHO INDIA SCHOLARSHIP NATIONAL CUP
+          </h1>
 
 
           {/* Elegant Description */}
@@ -39,13 +39,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/scholarship" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto bg-yellow-400 text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-yellow-500 hover:scale-105 transition-transform duration-300">
-                Explore Tests
+                Scholarship competition
               </button>
             </Link>
 
             <Link to="/login" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto bg-blue-500 text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-blue-600 hover:scale-105 transition-transform duration-300">
-                Login to Dashboard
+                Registration for competition
               </button>
             </Link>
           </div>
