@@ -20,7 +20,6 @@ const ClassSelection = () => {
                 duration: 2,
             });
 
-            // Navigate after toast delay
             setTimeout(() => {
                 navigate(`/register?class=${selectedClass}`);
             }, 2000);
@@ -37,27 +36,27 @@ const ClassSelection = () => {
     return (
         <div className="w-full min-h-screen flex flex-col justify-center items-center px-4 sm:px-10 bg-gray-50">
 
-            {/* Top Motivational Text */}
+            {/* Motivational Message */}
             <div className="text-center max-w-4xl mb-6">
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
-                চলুন আমরা এবং আপনারা মিলে সেই সমস্ত ফুটফুটে বাচ্চাদের ভবিষ্যৎ গড়ে তুলি, যারা আমাদের দেশের সম্পদ. আমাদের দেশের স্তম্ভ এবং আমাদের দেশের ভবিষ্যৎ।
+                    চলুন আমরা এবং আপনারা মিলে সেই সমস্ত ফুটফুটে বাচ্চাদের ভবিষ্যৎ গড়ে তুলি, যারা আমাদের দেশের সম্পদ. আমাদের দেশের স্তম্ভ এবং আমাদের দেশের ভবিষ্যৎ।
                     <br />
                     Let us and you together build the future of our children who are the resources of our country, the pillars of our country, and the future of our country.
                 </p>
             </div>
 
-            {/* Header with One-line Mobile View */}
+            {/* Header and Tagline */}
             <div className="text-center max-w-3xl mb-6">
                 <h1 className="text-2xl sm:text-4xl font-semibold text-gray-800 whitespace-nowrap">
                     <span className="block sm:inline">Padho India Scholarship</span>
                 </h1>
-                <p className="text-sm sm:text-base text-gray-600 mt-2">
-                    Achieve your dreams with <span className="font-semibold text-yellow-400">100% free education</span>.
-                    Enroll now for the <span className="text-blue-500">2025-2026 session!</span>
+                <p className="text-sm sm:text-base text-gray-600 mt-2 italic">
+                    Achieve your dreams with <span className="font-semibold text-yellow-400">100% free education</span>. <br />
+                    Enroll now for the <span className="text-blue-500 font-semibold">2025-2026 session!</span>
                 </p>
             </div>
 
-            {/* Class Selection */}
+            {/* Class Selection Buttons */}
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3 w-full max-w-4xl">
                 {[...Array(12)].map((_, index) => (
                     <Button
@@ -71,28 +70,25 @@ const ClassSelection = () => {
                 ))}
             </div>
 
-            {/* Fee Section */}
+            {/* Fee Display */}
             <div className="text-center mt-10">
                 <p className="text-sm sm:text-base font-medium text-gray-700 inline relative">
                     <span className="line-through">₹9999</span>
                 </p>
-
                 <span className="text-2xl sm:text-3xl font-bold text-red-500 ml-2">Free</span>
                 <p className="text-gray-500 text-sm">Includes all taxes & charges</p>
 
-                {/* Additional Text */}
-                <p className="text-gray-700 text-xs sm:text-sm mt-2">
+                <p className="text-gray-700 text-xs sm:text-sm mt-2 font-semibold">
                     Limited seats available. Enroll now and secure your future.
                 </p>
             </div>
 
-            {/* Enroll Section */}
-            <div className="text-center mt-4 mb-4">
+            {/* Enroll Button */}
+            <div className="text-center mt-4 mb-6">
                 <Button
                     onClick={handleEnroll}
-                    type="primary"
                     className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-8 rounded-md text-sm sm:text-base 
-                    shadow-lg transition-transform duration-300 transform hover:scale-105"
+                    shadow-lg transition-transform duration-300 transform hover:scale-105 border-none"
                 >
                     Enroll Now
                 </Button>

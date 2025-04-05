@@ -61,9 +61,10 @@ const Syllabus = () => {
         Padho India National Cup Competition Subjects
       </h2>
 
-      <p className="text-center text-base sm:text-lg mb-10">
-        From <span className="text-yellow-600 font-bold">School</span> to <span className="text-yellow-600 font-bold">State</span> Level – Unlock Knowledge at Every Step
+      <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
+        <span className="font-semibold text-yellow-600">From School</span> to <span className="font-semibold text-yellow-600">State Level</span> – Unlock Knowledge at Every Step
       </p>
+
 
       <div className="grid gap-6">
         {syllabusData.map((section, index) => (
