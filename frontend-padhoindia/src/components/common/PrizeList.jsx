@@ -129,7 +129,7 @@ const PrizeList = () => {
         <span className="font-semibold text-yellow-600">Unleash Your Potential</span>, Rise Through Every <span className="font-semibold text-yellow-600">Level</span>!
       </p>
 
-      <Collapse accordion>
+      <Collapse accordion className='border-blue-600'>
         {prizeData.map((section, index) => (
           <Panel
             header={<span className="font-bold text-lg text-gray-700">{section.level}</span>}
@@ -148,7 +148,8 @@ const PrizeList = () => {
                     key={i}
                     src={imgSrc}
                     alt={`prize-img-${i}`}
-                    className="w-full h-auto object-contain rounded-xl shadow-lg"
+                    className="w-full h-auto object-contain rounded-xl"
+                    style={{ border: '2px solid #2563eb' }} // Blue border (Tailwind: blue-600)
                   />
                 ))}
               </div>
@@ -157,7 +158,8 @@ const PrizeList = () => {
             {section.diamondCard && (
               <Card
                 title={<span className="font-bold text-gray-800 text-base md:text-lg">{section.diamondCard.title}</span>}
-                className="my-4 bg-yellow-50"
+                className="my-4 bg-yellow-50 border border-blue-600"
+                bordered={false}
               >
                 <List
                   dataSource={section.diamondCard.facilities}
@@ -201,7 +203,8 @@ const PrizeList = () => {
                     <Card
                       title={<span className="font-bold text-base md:text-lg">{winner.title}</span>}
                       key={idx}
-                      className="bg-blue-50"
+                      className="bg-blue-50 border border-blue-600"
+                      bordered={false}
                     >
                       <List
                         dataSource={winner.rewards}
