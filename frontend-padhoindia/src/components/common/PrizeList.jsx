@@ -115,16 +115,20 @@ const prizeData = [
         ],
       },
     ],
-    images: [finalImg1, finalImg2 , finalImg3, finalImg4],
+    images: [finalImg1, finalImg2, finalImg3, finalImg4],
   },
 ]
 
 const PrizeList = () => {
   return (
     <div className="p-4 md:p-8 bg-gray-50">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-10 text-gray-800">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2 text-gray-800">
         Padho India National Cup
       </h2>
+      <p className="text-center text-sm sm:text-base text-gray-600 mb-10">
+        <span className="font-semibold text-yellow-600">Unleash Your Potential</span>, Rise Through Every <span className="font-semibold text-yellow-600">Level</span>!
+      </p>
+
       <Collapse accordion>
         {prizeData.map((section, index) => (
           <Panel
