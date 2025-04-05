@@ -5,7 +5,7 @@ import "antd/dist/reset.css";
 
 // Import images from the assets folder
 import img1 from "../../assets/f1.jpg";
-import img2 from "../../assets/f2.jpg";
+import img2 from "../../assets/f22.jpg";
 import img3 from "../../assets/f3.jpg";
 import img4 from "../../assets/f4.jpg";
 

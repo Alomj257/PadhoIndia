@@ -70,7 +70,7 @@ const Syllabus = () => {
           <Card
             key={index}
             bordered={false}
-            className="rounded-xl bg-white border border-blue-600"
+            className="rounded-xl bg-white border border-blue-400"
             title={
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <span className="font-bold text-gray-800 text-base sm:text-lg">

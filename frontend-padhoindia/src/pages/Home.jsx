@@ -4,6 +4,7 @@ import Facilities from '../components/common/Facilities'
 import ClassSelection from '../components/common/ClassSelection'
 import PrizeList from '../components/common/PrizeList'
 import Syllabus from '../components/common/Syllabus'
+import ScholarshipHighlights from '../components/common/ScholarshipHighlights'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <ClassSelection/>
         <PrizeList/>
         <Syllabus/>
+        <ScholarshipHighlights/>
         </>
     </div>
   )

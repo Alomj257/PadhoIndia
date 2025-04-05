@@ -121,7 +121,7 @@ const prizeData = [
 
 const PrizeList = () => {
   return (
-    <div className="p-4 md:p-8 bg-gray-50">
+    <div className="p-5 md:p-8 bg-gray-50">
       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2 text-gray-800">
         Padho India National Cup
       </h2>
@@ -129,7 +129,7 @@ const PrizeList = () => {
         <span className="font-semibold text-yellow-600">Unleash Your Potential</span>, Rise Through Every <span className="font-semibold text-yellow-600">Level</span>!
       </p>
 
-      <Collapse accordion className='border-blue-600'>
+      <Collapse accordion className='bg-gray-50 p-5'>
         {prizeData.map((section, index) => (
           <Panel
             header={<span className="font-bold text-lg text-gray-700">{section.level}</span>}
