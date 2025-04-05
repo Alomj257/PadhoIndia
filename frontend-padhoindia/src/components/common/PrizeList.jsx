@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Collapse, List } from 'antd'
 import 'antd/dist/reset.css'
 
-// Import local images from assets folder
+// Import local images
 import schoolImg1 from '../../assets/school1.jpg'
 import schoolImg2 from '../../assets/school2.jpg'
 import schoolImg3 from '../../assets/school3.jpg'
@@ -10,12 +10,23 @@ import schoolImg4 from '../../assets/school4.jpg'
 import schoolImg5 from '../../assets/school5.jpg'
 import schoolImg6 from '../../assets/school6.jpg'
 
-import blockImg1 from '../../assets/school1.jpg'
-import districtImg1 from '../../assets/school1.jpg'
-import districtImg2 from '../../assets/school1.jpg'
-import stateImg from '../../assets/school1.jpg'
-import finalImg1 from '../../assets/school1.jpg'
-import finalImg2 from '../../assets/school1.jpg'
+import blockImg1 from '../../assets/block1.jpg'
+
+import districtImg1 from '../../assets/district1.jpg'
+import districtImg2 from '../../assets/district2.jpg'
+import districtImg3 from '../../assets/district3.jpg'
+import districtImg4 from '../../assets/district4.jpg'
+import districtImg5 from '../../assets/district5.jpg'
+import districtImg6 from '../../assets/district6.jpg'
+
+import stateImg1 from '../../assets/state1.jpg'
+import stateImg2 from '../../assets/state2.jpg'
+import stateImg3 from '../../assets/state3.jpg'
+
+import finalImg1 from '../../assets/final1.jpg'
+import finalImg2 from '../../assets/final2.jpg'
+import finalImg3 from '../../assets/final3.jpg'
+import finalImg4 from '../../assets/final4.jpg'
 
 const { Panel } = Collapse
 
@@ -53,7 +64,7 @@ const prizeData = [
       '5th: Laptop',
       '6th to 11th: Android Phone (Total 7)',
     ],
-    images: [districtImg1, districtImg2],
+    images: [districtImg1, districtImg2, districtImg3, districtImg4, districtImg5, districtImg6],
   },
   {
     level: 'State Level',
@@ -63,7 +74,7 @@ const prizeData = [
       'Each gets Rs. 20 Lakh Cash',
       '50 gm Pure Gold Medal (22 carat)',
     ],
-    images: [stateImg],
+    images: [stateImg1, stateImg2, stateImg3],
   },
   {
     level: 'Final Level (National Level)',
@@ -104,34 +115,36 @@ const prizeData = [
         ],
       },
     ],
-    images: [finalImg1, finalImg2],
+    images: [finalImg1, finalImg2 , finalImg3, finalImg4],
   },
 ]
 
 const PrizeList = () => {
   return (
     <div className="p-4 md:p-8 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center mb-10 text-black">
-        PADHO INDIA NATIONAL CUP
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-10 text-gray-800">
+        Padho India National Cup
       </h2>
       <Collapse accordion>
         {prizeData.map((section, index) => (
           <Panel
-            header={<span className="font-bold text-gray-700">{section.level}</span>}
+            header={<span className="font-bold text-lg text-gray-700">{section.level}</span>}
             key={index}
           >
             {section.winner && (
-              <p className="font-semibold text-yellow-700">{section.winner}</p>
+              <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
+                {section.winner}
+              </p>
             )}
 
             {section.images && (
-              <div className="flex flex-wrap gap-4 my-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 my-4">
                 {section.images.map((imgSrc, i) => (
                   <img
                     key={i}
                     src={imgSrc}
                     alt={`prize-img-${i}`}
-                    className="w-32 h-32 object-cover rounded-lg shadow-md"
+                    className="w-full h-auto object-contain rounded-xl shadow-lg"
                   />
                 ))}
               </div>
@@ -139,13 +152,13 @@ const PrizeList = () => {
 
             {section.diamondCard && (
               <Card
-                title={<span className="font-bold text-gray-800">{section.diamondCard.title}</span>}
+                title={<span className="font-bold text-gray-800 text-base md:text-lg">{section.diamondCard.title}</span>}
                 className="my-4 bg-yellow-50"
               >
                 <List
                   dataSource={section.diamondCard.facilities}
                   renderItem={(item) => (
-                    <List.Item className="font-medium">{item}</List.Item>
+                    <List.Item className="text-sm md:text-base font-medium">{item}</List.Item>
                   )}
                 />
               </Card>
@@ -155,9 +168,10 @@ const PrizeList = () => {
               <List
                 dataSource={section.prizes}
                 renderItem={(item) => (
-                  <List.Item className="font-medium text-gray-700">{item}</List.Item>
+                  <List.Item className="text-sm md:text-base font-medium text-gray-700">{item}</List.Item>
                 )}
                 bordered
+                className="mb-4"
               />
             )}
 
@@ -167,9 +181,10 @@ const PrizeList = () => {
                 <List
                   dataSource={section.rounds}
                   renderItem={(item) => (
-                    <List.Item className="font-medium">{item}</List.Item>
+                    <List.Item className="text-sm md:text-base font-medium">{item}</List.Item>
                   )}
                   bordered
+                  className="mb-4"
                 />
               </>
             )}
@@ -177,17 +192,17 @@ const PrizeList = () => {
             {section.winners && (
               <>
                 <h4 className="text-lg font-semibold mt-4 text-yellow-800">Top Winners</h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
                   {section.winners.map((winner, idx) => (
                     <Card
-                      title={<span className="font-bold">{winner.title}</span>}
+                      title={<span className="font-bold text-base md:text-lg">{winner.title}</span>}
                       key={idx}
                       className="bg-blue-50"
                     >
                       <List
                         dataSource={winner.rewards}
                         renderItem={(item) => (
-                          <List.Item className="font-medium">{item}</List.Item>
+                          <List.Item className="text-sm md:text-base font-medium">{item}</List.Item>
                         )}
                       />
                     </Card>
