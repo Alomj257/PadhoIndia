@@ -77,7 +77,7 @@ const Syllabus = () => {
                 <span className="font-bold text-gray-800 text-base sm:text-lg">
                   {section.level}
                 </span>
-                <span className="text-sm font-semibold text-blue-600">{section.mode}</span>
+                <span className="text-sm font-semibold text-blue-500">{section.mode}</span>
               </div>
             }
           >

@@ -47,7 +47,7 @@ const ClassSelection = () => {
 
             {/* Header and Tagline */}
             <div className="text-center max-w-3xl mb-6">
-                <h1 className="text-2xl sm:text-4xl font-semibold text-gray-800 whitespace-nowrap">
+                <h1 className="text-2xl sm:text-3xl font-semibold text-gray-800 whitespace-nowrap">
                     <span className="block sm:inline">Padho India Scholarship</span>
                 </h1>
                 <p className="text-sm sm:text-base text-gray-600 mt-2 italic">

@@ -5,6 +5,7 @@ import ClassSelection from '../components/common/ClassSelection'
 import PrizeList from '../components/common/PrizeList'
 import Syllabus from '../components/common/Syllabus'
 import ScholarshipHighlights from '../components/common/ScholarshipHighlights'
+import ImageGallery from '../components/common/ImageGallery'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <PrizeList/>
         <Syllabus/>
         <ScholarshipHighlights/>
+        <ImageGallery/>
         </>
     </div>
   )

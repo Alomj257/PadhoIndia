@@ -122,7 +122,7 @@ const prizeData = [
 const PrizeList = () => {
   return (
     <div className="p-5 md:p-8 bg-gray-50">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2 text-gray-800">
+      <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-2 text-gray-800">
         Padho India National Cup
       </h2>
       <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
