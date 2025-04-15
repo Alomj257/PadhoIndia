@@ -2,9 +2,12 @@ import React from "react";
 import { Typography, Avatar, Row, Col, Divider, Image } from "antd";
 import { FaLinkedin, FaTwitter, FaEnvelope, FaEye, FaBullseye } from "react-icons/fa";
 
-import ceoImg from "../assets/board1.jpg";
-import cooImg from "../assets/board1.jpg";
-import ctoImg from "../assets/board1.jpg";
+import m1 from "../assets/board1.jpg";
+import m2 from "../assets/board2.jpg";
+import m3 from "../assets/board3.jpg";
+import m4 from "../assets/board4.jpg";
+import m5 from "../assets/board5.jpg";
+import m6 from "../assets/board6.jpg";
 
 import gallery1 from "../assets/g1.jpg";
 import gallery2 from "../assets/g4.jpg";
@@ -17,28 +20,34 @@ const { Title, Paragraph } = Typography;
 
 const boardMembers = [
     {
-        name: "Mr. Kalim Khan",
-        position: "Founder & CEO",
-        image: ceoImg,
-        linkedin: "#",
-        twitter: "#",
-        email: "kalim@padhoindia.com"
+        name: "Bholanath De",
+        position: "Director",
+        image: m1,
     },
     {
-        name: "Jahangir Alom",
-        position: "COO",
-        image: cooImg,
-        linkedin: "#",
-        twitter: "#",
-        email: "jahangir@padhoindia.com"
+        name: "Bipul Mondal",
+        position: "Director",
+        image: m2,
     },
     {
-        name: "Amit Patel",
-        position: "CTO",
-        image: ctoImg,
-        linkedin: "#",
-        twitter: "#",
-        email: "amit@padhoindia.com"
+        name: "Afsasur Rahaman Sardar",
+        position: "Director",
+        image: m3,
+    },
+    {
+        name: "Anirban Saha",
+        position: "Director",
+        image: m4,
+    },
+    {
+        name: "Pradip Kumar Goswami",
+        position: "Director",
+        image: m5,
+    },
+    {
+        name: "Jaggu Sahani",
+        position: "Director",
+        image: m6,
     },
 ];
 
@@ -126,37 +135,35 @@ const AboutPage = () => {
                     </div>
                 </Col>
             </Row>
+            {/* Chairman's Desk */}
+            <div className="max-w-4xl mx-auto mt-16 text-center">
+                <Title level={3} className="text-blue-700 mb-2">From the Chairman's Desk</Title>
+                <Paragraph className="text-lg text-gray-700">
+                    Our Chairman envisions a society where no child's dream is limited by financial barriers. His unwavering commitment and leadership have been instrumental in shaping Padho India into a beacon of hope for thousands of students. Through his guidance, we continue to drive change and open new avenues for learning and growth across India.
+                </Paragraph>
+                <Paragraph className="text-xl font-semibold text-blue-600">— Md. Kalim Khan</Paragraph>
+            </div>
 
-            {/* Board of Members */}
-            <div className="bg-white py-8">
-                <div className="max-w-5xl mx-auto">
-                    <Title level={4} className="text-center text-blue-600 text-xl mb-4 ">Board of Members</Title>
+            {/* Board of Directors */}
+            <div className="bg-white py-12">
+                <div className="max-w-6xl mx-auto">
+                    <Title level={3} className="text-center text-blue-600 mb-8">Board of Directors</Title>
                     <Row gutter={[24, 24]} justify="center">
                         {boardMembers.map((member, index) => (
-                            <Col xs={24} md={8} key={index} className="text-center">
-                                <Avatar size={100} src={member.image} className="mb-4" />
+                            <Col xs={24} sm={12} md={6} key={index} className="text-center">
+                                <Avatar size={140} src={member.image} className="mb-4" />
                                 <Title level={5} className="text-md">{member.name}</Title>
                                 <Paragraph className="text-gray-500 text-sm">{member.position}</Paragraph>
-                                <div className="flex justify-center space-x-4 mt-3">
-                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                                        <FaLinkedin className="text-blue-500 text-xl hover:scale-105 transition" />
-                                    </a>
-                                    <a href={member.twitter} target="_blank" rel="noopener noreferrer">
-                                        <FaTwitter className="text-blue-400 text-xl hover:scale-105 transition" />
-                                    </a>
-                                    <a href={`mailto:${member.email}`}>
-                                        <FaEnvelope className="text-red-500 text-xl hover:scale-105 transition" />
-                                    </a>
-                                </div>
                             </Col>
                         ))}
                     </Row>
                 </div>
             </div>
+
             {/* Gallery */}
             <div className="bg-white py-12 px-6">
                 <div className="max-w-5xl mx-auto">
-                    <Title level={3} className="text-center text-blue-600 text-2xl mb-8">Gallery</Title>
+                    <Title level={3} className="text-center text-blue-600 mb-8">Gallery</Title>
                     <Row gutter={[16, 16]} justify="center">
                         {galleryImages.map((src, index) => (
                             <Col xs={12} md={8} key={index}>

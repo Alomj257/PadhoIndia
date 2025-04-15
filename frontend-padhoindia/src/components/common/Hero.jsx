@@ -37,7 +37,7 @@ const Hero = () => {
               className="w-[100px] h-auto object-contain mb-2"
             />
             <span className="text-white px-6 py-2  font-bold text-lg animate-blinkBg">
-              Scholarship Swarna Cup
+              Scholarship Cup
             </span>
           </div>
 
