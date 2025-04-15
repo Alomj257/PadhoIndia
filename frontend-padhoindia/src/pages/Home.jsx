@@ -8,6 +8,7 @@ import ScholarshipHighlights from '../components/common/ScholarshipHighlights'
 import ImageGallery from '../components/common/ImageGallery'
 import FacilitiesText from '../components/common/FacilitiesText'
 import EducationOverview from '../components/common/EducationOverview'
+import ScholarshipCupFlow from '../components/common/ScholarshipCupFlow'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <FacilitiesText/>
         <Facilities/>
         <ClassSelection/>
+        <ScholarshipCupFlow/>
         <EducationOverview/>
         <PrizeList/>
         <Syllabus/>
