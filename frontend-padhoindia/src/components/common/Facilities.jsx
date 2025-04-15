@@ -134,7 +134,7 @@ const facilities = [
     id: 12,
     title: "Motivational & Inspiring Classes",
     description:
-      "Get inspired through regular sessions that boost confidence and mindset to overcome challenges.",
+      "Get inspired through regular sessions that boost confidence and mindset.",
     icon: <FaLightbulb />,
     img: img12,
     iconColor: "text-amber-600",

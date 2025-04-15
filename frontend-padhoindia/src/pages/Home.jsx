@@ -7,6 +7,7 @@ import Syllabus from '../components/common/Syllabus'
 import ScholarshipHighlights from '../components/common/ScholarshipHighlights'
 import ImageGallery from '../components/common/ImageGallery'
 import FacilitiesText from '../components/common/FacilitiesText'
+import EducationOverview from '../components/common/EducationOverview'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <FacilitiesText/>
         <Facilities/>
         <ClassSelection/>
+        <EducationOverview/>
         <PrizeList/>
         <Syllabus/>
         <ScholarshipHighlights/>

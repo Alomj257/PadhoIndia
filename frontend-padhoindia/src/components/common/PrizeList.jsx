@@ -150,7 +150,6 @@ const PrizeList = () => {
                     src={imgSrc}
                     alt={`prize-img-${i}`}
                     className="w-full h-auto object-contain rounded-xl"
-                    style={{ border: '2px solid #2563eb' }} // Blue border (Tailwind: blue-600)
                   />
                 ))}
               </div>
@@ -159,7 +158,7 @@ const PrizeList = () => {
             {section.diamondCard && (
               <Card
                 title={<span className="font-bold text-gray-800 text-base md:text-lg">{section.diamondCard.title}</span>}
-                className="my-4 bg-yellow-50 border border-blue-600"
+                className="my-4 bg-yellow-50 border border-gray-300"
                 bordered={false}
               >
                 <List
