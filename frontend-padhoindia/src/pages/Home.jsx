@@ -6,12 +6,14 @@ import PrizeList from '../components/common/PrizeList'
 import Syllabus from '../components/common/Syllabus'
 import ScholarshipHighlights from '../components/common/ScholarshipHighlights'
 import ImageGallery from '../components/common/ImageGallery'
+import FacilitiesText from '../components/common/FacilitiesText'
 
 const Home = () => {
   return (
     <div>
         <>
         <Hero/>
+        <FacilitiesText/>
         <Facilities/>
         <ClassSelection/>
         <PrizeList/>
