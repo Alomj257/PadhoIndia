@@ -24,8 +24,8 @@ const scholarshipPoints = [
         highlight: '2000 B.Ed, Candidates and 2000 D.El.Ed Candidates',
     },
     {
-        text: 'Share all the cost of 1000 Poor Excellent and Brilliant NIIT Pass Out Government Medical College Candidates to MKK ONLINE ALLIANCE.',
-        highlight: '1000 Poor Excellent and Brilliant NIIT Pass Out',
+        text: 'Share all the cost of 1000 Poor Excellent and Brilliant NEET Pass Out Government Medical College Candidates to MKK ONLINE ALLIANCE.',
+        highlight: '1000 Poor Excellent and Brilliant NEET Pass Out',
     },
     {
         text: 'Share all the cost of 2000 BSC And GNM Nursing Candidates to MKK ONLINE ALLIANCE.',
