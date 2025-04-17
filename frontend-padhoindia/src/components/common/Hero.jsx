@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../../assets/hero1.jpg";
 import cupImage from "../../assets/cup.png";
+import prizePDF from "../../assets/prize-list.pdf"; // ✅ import PDF
 
 const Hero = () => {
   return (
     <div
-      className="relative h-[95vh] bg-no-repeat bg-cover bg-center"
+      className="relative h-[110vh] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
@@ -18,15 +19,16 @@ const Hero = () => {
         <div className="text-center px-6 md:px-12 lg:px-20 max-w-4xl mx-auto">
 
           {/* Main Heading */}
-          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-yellow-300 leading-relaxed mb-4">
-            PADHO INDIA SCHOLARSHIP NATIONAL CUP
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-yellow-300 leading-relaxed mb-4">
+
+            PADHO INDIA SCHOLARSHIP CUP
           </h1>
 
-          {/* Description */}
-          <p className="text-gray-300 text-sm md:text-lg lg:text-xl mb-4 leading-relaxed">
-            Personalized tests for{" "}
-            <span className="text-yellow-300 font-medium">Class 1 to 12</span>.
-            Achieve your academic dreams with a scholarship-backed learning platform.
+          {/* Updated Description */}
+          <p className="text-gray-300 text-sm md:text-lg lg:text-xl mb-4 leading-relaxed font-medium">
+            552 Candidates Will Become <span className="text-yellow-400 font-semibold">Crorepatis</span>.<br />
+            Over 10 Lakh Students will get <span className="text-blue-400 font-semibold">Scholarship</span>...<br />
+            And Millions of Students will make career by <span className="text-green-400 font-semibold">Higher study</span>.
           </p>
 
           {/* Cup Image and Text */}
@@ -36,22 +38,26 @@ const Hero = () => {
               alt="Cup"
               className="w-[100px] h-auto object-contain mb-2"
             />
-            <span className="text-white px-6 py-2  font-bold text-lg animate-blinkBg">
+            <span className="text-white px-6 py-2 font-bold text-lg animate-blinkBg">
               Scholarship Cup
             </span>
           </div>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <Link to="/scholarship" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-yellow-400 text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-yellow-500 hover:scale-105 transition-transform duration-300">
-                Scholarship competition
+            <a
+              href={prizePDF}
+              download="prize-list.pdf"
+              className="w-full sm:w-auto"
+            >
+              <button className="w-full sm:w-auto text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
+                Prize List for competition
               </button>
-            </Link>
+            </a>
 
             <Link to="/register" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-blue-500 text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-blue-600 hover:scale-105 transition-transform duration-300">
-                Registration for competition
+              <button className="w-full sm:w-auto text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
+                Registration for Competition
               </button>
             </Link>
           </div>
@@ -61,7 +67,6 @@ const Hero = () => {
             Unlock <span className="text-yellow-400">Free Education</span> <br />
             Through <span className="text-blue-400">Scholarships</span>
           </h1>
-
         </div>
       </div>
     </div>

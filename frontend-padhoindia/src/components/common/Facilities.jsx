@@ -152,17 +152,7 @@ const Facilities = () => {
         },
       }}
     >
-      <div className="py-16 bg-gray-50">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
-            Discover Our Facilities
-          </h2>
-          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mt-4">
-            Experience unparalleled educational support with expert mentorship, exclusive scholarships, and personalized coaching designed for your success.
-          </p>
-        </div>
-
+      <div className="py-10 bg-gray-50">
         {/* Cards */}
         <Row gutter={[24, 24]} justify="center" className="px-6 md:px-10">
           {facilities.map((facility) => (
