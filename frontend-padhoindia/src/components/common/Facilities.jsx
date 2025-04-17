@@ -33,9 +33,9 @@ import img12 from "../../assets/f12.png";
 const facilities = [
   {
     id: 1,
-    title: "Free Quality Education",
+    title: "Top Candidate List",
     description:
-      "Empowering underprivileged students with accessible, high-standard education guided by expert mentors.",
+      "This section features the top-performing students from West Bengal in the scholarship competition.",
     icon: <FaGraduationCap />,
     img: img1,
     iconColor: "text-red-500",
