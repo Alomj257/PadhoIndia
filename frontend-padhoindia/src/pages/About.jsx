@@ -137,12 +137,19 @@ const AboutPage = () => {
             </Row>
             {/* Chairman's Desk */}
             <div className="max-w-4xl mx-auto mt-16 text-center">
-                <Title level={3} className="text-blue-700 mb-2">From the Chairman's Desk</Title>
-                <Paragraph className="text-lg text-gray-700">
-                    Our Chairman envisions a society where no child's dream is limited by financial barriers. His unwavering commitment and leadership have been instrumental in shaping Padho India into a beacon of hope for thousands of students. Through his guidance, we continue to drive change and open new avenues for learning and growth across India.
-                </Paragraph>
-                <Paragraph className="text-xl font-semibold text-blue-600">— Md. Kalim Khan</Paragraph>
-            </div>
+  <Title level={3} className="text-blue-700 mb-2">From the Chairman's Desk</Title>
+  <Paragraph className="text-lg text-gray-700">
+    Our Honourable Founder, Chairman, CEO Cum Managing Director <strong>Mr. Md. K. Khan Sir</strong> is the proud recipient of the <strong>Bharat Gaurav Award</strong> and <strong>Rashtriya Vikas Ratan Award</strong>, achieved on <strong>23rd August 2012</strong> from the Indian Achievers Forum, New Delhi.
+  </Paragraph>
+  <Paragraph className="text-lg text-gray-700">
+    He is a great achiever and a relentless force working towards propelling India into the forefront of the 21st Century. An <strong>ICON</strong>, a <strong>visionary</strong>, and a true leader, Mr. Khan has the unique capability to think out of the box.
+  </Paragraph>
+  <Paragraph className="text-lg text-gray-700">
+    With immense knowledge and experience across almost every field of life, he consistently delivers outstanding results. His brilliant mind and high IQ empower him to complete any project efficiently within a remarkably short span of time.
+  </Paragraph>
+  <Paragraph className="text-xl font-semibold text-blue-600">— Md. K. Khan</Paragraph>
+</div>
+
 
             {/* Board of Directors */}
             <div className="bg-white py-12">
