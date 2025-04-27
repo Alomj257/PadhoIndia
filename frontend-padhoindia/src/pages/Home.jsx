@@ -10,6 +10,7 @@ import FacilitiesText from '../components/common/FacilitiesText'
 import EducationOverview from '../components/common/EducationOverview'
 import ScholarshipCupFlow from '../components/common/ScholarshipCupFlow'
 
+
 const Home = () => {
   return (
     <div>
@@ -24,6 +25,7 @@ const Home = () => {
         <Syllabus/>
         <ScholarshipHighlights/>
         <ImageGallery/>
+        
         </>
     </div>
   )
