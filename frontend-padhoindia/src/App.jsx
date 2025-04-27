@@ -52,6 +52,8 @@ const AppContent = () => {
           <Route path="/events" element={<Events />} />
 
           <Route path="/contact" element={<ContactUs />} />
+          
+          
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
