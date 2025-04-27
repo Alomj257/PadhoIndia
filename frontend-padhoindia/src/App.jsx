@@ -12,6 +12,7 @@ import ScholarshipDetails from "./components/common/ScholarshipDetails";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
+import Vailist from "./components/common/Vailist";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./components/auth/Login"));
@@ -53,7 +54,7 @@ const AppContent = () => {
 
           <Route path="/contact" element={<ContactUs />} />
           
-          
+          <Route path="/prize-list" element={<Vailist />} />
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
