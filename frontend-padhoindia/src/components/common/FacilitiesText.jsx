@@ -3,10 +3,10 @@ import React from 'react';
 const FacilitiesText = () => {
   return (
     <div className="pt-16 bg-gray-50">
-         {/* videosection */}
+         {/* videosection
          <div class="bg-gray-100 py-16 px-6">
   <div class="max-w-4xl mx-auto text-center">
-    {/* <!-- Section Title --> */}
+    <!-- Section Title -->
     <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
       Our Introduction Video
     </h2>
@@ -14,7 +14,7 @@ const FacilitiesText = () => {
       Learn what we do and how we help students grow.
     </p>
 
-    {/* <!-- Video Container with YouTube Embed and Fixed Height --> */}
+    <!-- Video Container with YouTube Embed and Fixed Height -->
     <div class="rounded-lg overflow-hidden shadow-lg border border-gray-300 h-[400px] md:h-[600px]">
       <iframe
         width="100%"
@@ -32,7 +32,7 @@ const FacilitiesText = () => {
 </div>
 
 
-      {/* videosection */}
+      videosection */}
 
 
       {/* Header */}
