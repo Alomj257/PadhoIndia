@@ -53,10 +53,13 @@ const Hero = () => {
               download="prize-list.pdf"
               className="w-full sm:w-auto"
             >
+              <Link to="/prize-list" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
                 Prize List 
               </button>
+              </Link>
             </a>
+            
 
             <Link to="/register" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
@@ -81,11 +84,11 @@ const Hero = () => {
               </button>
             </a>
 
-            {/* <Link to="/register" className="w-full sm:w-auto"> */}
+            <Link to="/register" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
              Bengal competition
               </button>
-            {/* </Link> */}
+            </Link>
           </div>
 
           {/* </h1> */}
