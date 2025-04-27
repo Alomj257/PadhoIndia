@@ -30,7 +30,7 @@ const ScholarshipCupFlow = () => {
           {/* Left Option */}
           <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">₹400</p>
+              <p className="text-base sm:text-lg font-semibold text-blue-800">₹2200</p>
               <p className="font-bold text-gray-800">Direct Gold Card</p>
             </div>
 
@@ -50,7 +50,7 @@ const ScholarshipCupFlow = () => {
           {/* Right Option */}
           <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
             <div className="bg-green-100 p-4 rounded-lg shadow-md text-center">
-              <p className="text-base sm:text-lg font-semibold text-green-800">₹100</p>
+              <p className="text-base sm:text-lg font-semibold text-green-800">₹200</p>
               <p className="font-bold text-gray-800">For Qualifying</p>
             </div>
 

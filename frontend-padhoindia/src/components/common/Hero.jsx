@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import heroImage from "../../assets/hero1.jpg";
 import cupImage from "../../assets/cup.png";
 import prizePDF from "../../assets/prize-list.pdf"; // ✅ import PDF
+import "./Hero.css"
+
+
 
 const Hero = () => {
   return (
@@ -51,7 +54,7 @@ const Hero = () => {
               className="w-full sm:w-auto"
             >
               <button className="w-full sm:w-auto text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
-                Prize List for competition
+                Prize List 
               </button>
             </a>
 
@@ -63,10 +66,29 @@ const Hero = () => {
           </div>
 
           {/* Unlock Text */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight">
-            Unlock <span className="text-yellow-400">Free Education</span> <br />
-            Through <span className="text-blue-400">Scholarships</span>
-          </h1>
+          {/* <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight"> */}
+            {/* Unlock <span className="text-yellow-400">Free Education</span> <br />
+            Through <span className="text-blue-400">Scholarships</span> */}
+             {/* Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+            <a
+              // href={prizePDF}
+              // download="prize-list.pdf"
+              // className="w-full sm:w-auto"
+            >
+              <button className="w-full sm:w-auto text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
+              Exam Competition System
+              </button>
+            </a>
+
+            {/* <Link to="/register" className="w-full sm:w-auto"> */}
+              <button className="w-full sm:w-auto text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
+             Bengal competition
+              </button>
+            {/* </Link> */}
+          </div>
+
+          {/* </h1> */}
         </div>
       </div>
     </div>

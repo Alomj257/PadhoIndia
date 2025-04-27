@@ -8,6 +8,7 @@ import m3 from "../assets/board3.jpg";
 import m4 from "../assets/board4.jpg";
 import m5 from "../assets/board5.jpg";
 import m6 from "../assets/board6.jpg";
+import m7 from "../assets/board7.jpg"
 
 import gallery1 from "../assets/g1.jpg";
 import gallery2 from "../assets/g4.jpg";
@@ -48,6 +49,11 @@ const boardMembers = [
         name: "Jaggu Sahani",
         position: "Director",
         image: m6,
+    },
+    {
+        name: "Kiran Mondal",
+        position: "Director",
+        image: m7,
     },
 ];
 
