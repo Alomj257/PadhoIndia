@@ -62,6 +62,7 @@ const FacilitiesText = () => {
             <li>6) Free Job Vacancy (Own Companies Projects And Other Companies)</li>
             <li>7) Free Acting Chances - Auditions for Serials, Ads, Videos, Content Creation on Various Platforms</li>
             <li>8) Chance to Become Crorepati (Through Company Franchise Opportunities)</li>
+            <br />
           </ul>
         </div>
 
