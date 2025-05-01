@@ -3,7 +3,7 @@ import React from 'react';
 const FacilitiesText = () => {
   return (
     <div className="pt-16 bg-gray-50">
-         {/* videosection
+      {/* videosection
          <div class="bg-gray-100 py-16 px-6">
   <div class="max-w-4xl mx-auto text-center">
     <!-- Section Title -->
@@ -45,51 +45,51 @@ const FacilitiesText = () => {
         </p>
       </div>
 
-     
-      <div className="flex flex-col md:flex-row justify-center items-start gap-6 px-6 py-12">
-  {/* Gold Card Facilities */}
-  <div className="w-full md:w-[400px] bg-gradient-to-r from-blue-500 to-indigo-600 p-8 rounded-lg shadow-lg text-center">
-    <h3 className="text-2xl font-bold text-white mb-4">
-      Gold Card Facilities
-    </h3>
-    <hr className="border-t-2 border-white mb-4" />
-    <ul className="text-white text-sm space-y-2 text-left">
-      <li>1) Free Online IT All Course Classes</li>
-      <li>2) Free Legal (Advocate) Support - High Court Only</li>
-      <li>3) Higher Study Scholarship (All Diploma & Engineering Courses for Poor & Brilliant Students)</li>
-      <li>4) Free Career Counseling Classes</li>
-      <li>5) Motivational and Inspiring Classes</li>
-      <li>6) Free Job Vacancy (Own Companies Projects And Other Companies)</li>
-      <li>7) Free Acting Chances - Auditions for Serials, Ads, Videos, Content Creation on Various Platforms</li>
-      <li>8) Chance to Become Crorepati (Through Company Franchise Opportunities)</li>
-    </ul>
-  </div>
 
-  {/* Membership Card Facilities */}
-  <div className="w-full md:w-[400px] bg-gradient-to-r from-purple-500 to-pink-600 p-8 rounded-lg shadow-lg text-center">
-    <h3 className="text-2xl font-bold text-white mb-4">
-      Membership Card Facilities
-    </h3>
-    <hr className="border-t-2 border-white mb-4" />
-    <ul className="text-white text-sm space-y-2 text-left">
-      <li>1) Free Online Tuition Classes (5th to 12th) - Two Times a Day (State-Wise Languages)</li>
-      <li>2) Free Online Virtual Medical Treatment and Consulting (For Full Family Members)</li>
-      <li>3) Chance to Participate in Scholarship Cup Competition</li>
-      <li>4) Free Online Virtual And AI English Speaking Classes.</li>
-      <li>5) Free Online Computer Training Classes.</li>
-      <li>6) Free Online Martial Art Classes.</li>
-      <li>7) Chance to referral income of various projects</li>
-      <li>8) Chance to Participate in Scholarship Cup Competition</li>
-    </ul>
-  </div>
-</div>
+      <div className="flex flex-col md:flex-row justify-center items-start gap-6 px-6 py-12">
+        {/* Gold Card Facilities */}
+        <div className="w-full md:w-[400px] bg-gradient-to-r from-blue-500 to-indigo-600 p-8 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Gold Card Facilities
+          </h3>
+          <hr className="border-t-2 border-white mb-4" />
+          <ul className="text-white text-sm space-y-2 text-left">
+            <li>1) Free Online IT All Course Classes</li>
+            <li>2) Free Legal (Advocate) Support - High Court Only</li>
+            <li>3) Higher Study Scholarship (All Diploma & Engineering Courses for Poor & Brilliant Students)</li>
+            <li>4) Free Career Counseling Classes</li>
+            <li>5) Motivational and Inspiring Classes</li>
+            <li>6) Free Job Vacancy (Own Companies Projects And Other Companies)</li>
+            <li>7) Free Acting Chances - Auditions for Serials, Ads, Videos, Content Creation on Various Platforms</li>
+            <li>8) Chance to Become Crorepati (Through Company Franchise Opportunities)</li>
+          </ul>
+        </div>
+
+        {/* Membership Card Facilities */}
+        <div className="w-full md:w-[400px] bg-gradient-to-r from-purple-500 to-pink-600 p-8 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Membership Card Facilities
+          </h3>
+          <hr className="border-t-2 border-white mb-4" />
+          <ul className="text-white text-sm space-y-2 text-left">
+            <li>1) Free Online Tuition Classes (5th to 12th) - Two Times a Day (State-Wise Languages)</li>
+            <li>2) Free Online Virtual Medical Treatment and Consulting (For Full Family Members)</li>
+            <li>3) Chance to Participate in Scholarship Cup Competition</li>
+            <li>4) Free Online Virtual And AI English Speaking Classes.</li>
+            <li>5) Free Online Computer Training Classes.</li>
+            <li>6) Free Online Martial Art Classes.</li>
+            <li>7) Chance to referral income of various projects</li>
+            <li>8) Chance to Participate in Scholarship Cup Competition</li>
+          </ul>
+        </div>
+      </div>
 
       {/* School Scholarship Development (Larger width) */}
       <div className="bg-gradient-to-r from-green-500 to-teal-600 p-8 rounded-lg shadow-lg text-center max-w-xl mx-auto">
         <h3 className="text-2xl font-bold text-white mb-4">
           School Scholarship Development
         </h3>
-        <hr className="border-t-2 border-white mb-4"/>
+        <hr className="border-t-2 border-white mb-4" />
         <ul className="text-white text-sm space-y-2 text-left">
           <li>1) Scholarships for Underprivileged and Brilliant Students</li>
           <li>2) Academic Excellence Rewards for High Performers</li>
