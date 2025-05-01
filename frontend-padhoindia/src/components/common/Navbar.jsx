@@ -46,7 +46,7 @@ const Navbar = () => {
                 <Link to="/services/prize-list" className="block px-4 py-2 hover:bg-gray-100">Prize List</Link>
                 <Link to="/services/exam-system" className="block px-4 py-2 hover:bg-gray-100">Scholarship Exam System</Link>
                 <Link to="/services/qar" className="block px-4 py-2 hover:bg-gray-100">QAR</Link>
-                <Link to="/Vision" className="hover:text-blue-500 transition">Vision & Mission</Link>
+                <Link to="/Vision" className="block px-4 py-2 hover:bg-gray-100">Vision & Mission</Link>
                 <Link to="/services/raksha-kavach" className="block px-4 py-2 hover:bg-gray-100">KK Raksha Kavach</Link>
                 <Link to="/services/membership-card" className="block px-4 py-2 hover:bg-gray-100">KK Membership Card</Link>
               </div>
