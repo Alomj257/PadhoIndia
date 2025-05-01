@@ -12,6 +12,7 @@ import ScholarshipDetails from "./components/common/ScholarshipDetails";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
+import PrizeList from "./components/prizes/PrizeList";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./components/auth/Login"));
@@ -52,6 +53,8 @@ const AppContent = () => {
           <Route path="/events" element={<Events />} />
 
           <Route path="/contact" element={<ContactUs />} />
+          
+          <Route path="/prize-list" element={<PrizeList/>} />
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />

@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../../assets/hero1.jpg";
 import cupImage from "../../assets/cup.png";
-import prizePDF from "../../assets/prize-list.pdf"; // ✅ import PDF
 
 const Hero = () => {
   return (
     <div
-      className="relative h-[110vh] bg-no-repeat bg-cover bg-center"
+      className="relative h-[100vh] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
@@ -20,7 +19,6 @@ const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-yellow-300 leading-relaxed mb-4">
-
             PADHO INDIA SCHOLARSHIP CUP
           </h1>
 
@@ -45,28 +43,29 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <a
-              href={prizePDF}
-              download="prize-list.pdf"
-              className="w-full sm:w-auto"
-            >
-              <button className="w-full sm:w-auto text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
-                Prize List for competition
+            <Link to="/prize-list" className="w-full sm:w-auto">
+              <button className="min-w-[20rem] text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
+                Prize List
               </button>
-            </a>
+            </Link>
 
             <Link to="/register" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
+              <button className="min-w-[20rem] text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
                 Registration for Competition
               </button>
             </Link>
           </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+          <Link to="/register" className="w-full sm:w-auto">
+              <button className="min-w-[20rem] text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
+                Bengal competition
+              </button>
+            </Link>
 
-          {/* Unlock Text */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight">
-            Unlock <span className="text-yellow-400">Free Education</span> <br />
-            Through <span className="text-blue-400">Scholarships</span>
-          </h1>
+            <button className="min-w-[20rem] text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
+              Exam Competition System
+            </button>
+          </div>
         </div>
       </div>
     </div>
