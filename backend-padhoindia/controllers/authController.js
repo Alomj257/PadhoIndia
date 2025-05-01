@@ -1,99 +1,147 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const {sendEmail} = require("../utils/emailService");
+const { sendEmail } = require("../utils/emailService");
 require("dotenv").config();
 
 // Generate OTP
 const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString();
 
+// Generate Unique Registration Number
+const generateRegNumber = async () => {
+  const count = await User.countDocuments({ userType: "STUDENT" });
+  return "REG" + (1000 + count + 1);
+};
+
 // 📌 Register User
 exports.register = async (req, res) => {
     try {
-        const { firstName, lastName, email, password, country, phone, userType } = req.body;
-        const userExists = await User.findOne({ email });
-
-        if (userExists) return res.status(400).json({ message: "Email already exists" });
-
-        const user = await User.create({ firstName, lastName, email, password, country, phone, userType });
-
-        res.status(201).json({ message: "User registered successfully", user });
-
+      const {
+        firstName,
+        lastName,
+        email,
+        password,
+        country,
+        phone,
+        userType,
+        dateOfBirth,
+        whatsappNumber,
+        address,
+        district,
+        state,
+        pin,
+        schoolName,
+        studentClass,
+        schoolAddress,
+        aadharCardNumber
+      } = req.body;
+  
+      const userExists = await User.findOne({ email });
+      if (userExists) return res.status(400).json({ message: "Email already exists" });
+  
+      const newUserData = {
+        firstName,
+        lastName,
+        email,
+        password,
+        country,
+        phone,
+        userType
+      };
+  
+      if (userType === "STUDENT") {
+        newUserData.dateOfBirth = dateOfBirth;
+        newUserData.whatsappNumber = whatsappNumber;
+        newUserData.address = address;
+        newUserData.district = district;
+        newUserData.state = state;
+        newUserData.pin = pin;
+        newUserData.schoolName = schoolName;
+        newUserData.studentClass = studentClass;
+        newUserData.schoolAddress = schoolAddress;
+        newUserData.aadharCardNumber = aadharCardNumber;
+        newUserData.registrationNumber = await generateRegNumber();
+      }
+  
+      const user = await User.create(newUserData);
+  
+      // Fetch the saved user with all fields, except password
+      const fullUser = await User.findById(user._id).lean();
+      delete fullUser.password;
+  
+      res.status(201).json({
+        message: "User registered successfully",
+        user: fullUser
+      });
+  
     } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
+      res.status(500).json({ message: "Server error", error: error.message });
     }
-};
+  };
+  
 
 // 📌 Login User
 exports.login = async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const user = await User.findOne({ email });
+  try {
+    const { email, password } = req.body;
 
-        if (!user) return res.status(404).json({ message: "User not found" });
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 
-        res.json({ message: "Login successful", token, user });
-
-    } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
-    }
+    res.json({ message: "Login successful", token, user: { ...user.toObject(), password: undefined } });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
 
 // 📌 Get User Profile
 exports.getProfile = async (req, res) => {
-    try {
-        const user = await User.findById(req.user.id).select("-password");
+  try {
+    const user = await User.findById(req.user.id).select("-password");
 
-        if (!user) return res.status(404).json({ message: "User not found" });
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-        res.json({ message: "User profile fetched successfully", user });
-
-    } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
-    }
+    res.json({ message: "User profile fetched successfully", user });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
 
 // 📌 Update User Profile
 exports.updateProfile = async (req, res) => {
-    try {
-        const { firstName, lastName, country, phone } = req.body;
+  try {
+    const updateFields = { ...req.body };
 
-        const user = await User.findById(req.user.id);
-        if (!user) return res.status(404).json({ message: "User not found" });
+    // prevent password update from here (optional)
+    if (updateFields.password) delete updateFields.password;
 
-        user.firstName = firstName || user.firstName;
-        user.lastName = lastName || user.lastName;
-        user.country = country || user.country;
-        user.phone = phone || user.phone;
+    const user = await User.findByIdAndUpdate(req.user.id, updateFields, { new: true }).select("-password");
 
-        await user.save();
-
-        res.json({ message: "User profile updated successfully", user });
-
-    } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
-    }
+    res.json({ message: "User profile updated", user });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
 
 // 📌 Delete User
 exports.deleteUser = async (req, res) => {
-    try {
-        const user = await User.findById(req.user.id);
-        if (!user) return res.status(404).json({ message: "User not found" });
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-        await user.deleteOne();
+    await user.deleteOne();
 
-        res.json({ message: "User deleted successfully" });
-
-    } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
-    }
+    res.json({ message: "User deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
+
 
 // 📌 Forgot Password - Generate OTP
 exports.forgotPassword = async (req, res) => {
