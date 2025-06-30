@@ -13,6 +13,8 @@ import About from "./pages/About";
 import Events from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
 import PrizeList from "./components/prizes/PrizeList";
+import Exam from "./pages/Exam";
+import ExamForm from "./components/exam/ExamForm";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./components/auth/Login"));
@@ -28,7 +30,7 @@ const AppContent = () => {
   const location = useLocation(); // Get current route
 
   const hideNavbarRoutes = ["/login", "/register", "/forgot-password", "/reset-password", "/confirm-otp"];
-  
+
   const shouldHideFooter = hideNavbarRoutes.includes(location.pathname);
 
   return (
@@ -44,24 +46,21 @@ const AppContent = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/confirm-otp" element={<ConfirmOtp />} />
-
           <Route path="/scholarship" element={<Scholarship />} />
           <Route path="/scholarship/:id" element={<ScholarshipDetails />} />
-
           <Route path="/about" element={<About />} />
-
           <Route path="/events" element={<Events />} />
-
           <Route path="/contact" element={<ContactUs />} />
-          
-          <Route path="/prize-list" element={<PrizeList/>} />
+          <Route path="/prize-list" element={<PrizeList />} />
+          <Route path="/exam-registration" element={<ExamForm />} />
+          <Route path="/exam" element={<Exam/>}/>
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
         </Routes>
       </Suspense>
 
-      {!shouldHideFooter && <Footer />} 
+      {!shouldHideFooter && <Footer />}
     </>
   );
 };
