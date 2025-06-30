@@ -56,15 +56,17 @@ const Hero = () => {
             </Link>
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-          <Link to="/register" className="w-full sm:w-auto">
+            <Link to="/register" className="w-full sm:w-auto">
               <button className="min-w-[20rem] text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
                 Bengal competition
               </button>
             </Link>
 
+            <Link to="/exam-registration">
             <button className="min-w-[20rem] text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
               Exam Competition System
             </button>
+            </Link>
           </div>
         </div>
       </div>
