@@ -50,8 +50,24 @@ const ExamForm = () => {
     setLoading(true);
     toast.loading("Submitting your application...", { id: "submit" });
 
+    // Convert dateOfBirth from dd-mm-yyyy to yyyy-mm-dd
+    const dobParts = form.dateOfBirth.split("-");
+    let formattedDob = "";
+    if (dobParts.length === 3) {
+      const [dd, mm, yyyy] = dobParts;
+      // Simple validation: check day, month, year lengths
+      if (dd.length === 2 && mm.length === 2 && yyyy.length === 4) {
+        formattedDob = `${yyyy}-${mm}-${dd}`;
+      }
+    }
+
+    const formToSubmit = {
+      ...form,
+      dateOfBirth: formattedDob || form.dateOfBirth, // send formatted or fallback to original
+    };
+
     try {
-      const response = await submitExamForm(form);
+      const response = await submitExamForm(formToSubmit);
       setSubmitted(response.data.registrationSummary);
       toast.success("Application submitted successfully!", { id: "submit" });
     } catch (error) {
@@ -61,6 +77,19 @@ const ExamForm = () => {
     }
     setLoading(false);
   };
+
+  const formatDateDDMMYYYY = (dateString) => {
+  if (!dateString) return "-";
+  const date = new Date(dateString);
+  if (isNaN(date)) return "-";
+
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero indexed
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+};
+
 
   const downloadPdf = () => {
     if (!submitted) return;
@@ -96,7 +125,7 @@ const ExamForm = () => {
     addLabelValue("Email", submitted.emailId);
     addLabelValue("Mobile Number", submitted.mobileNumber);
     addLabelValue("Category", submitted.category);
-    addLabelValue("Date of Birth", new Date(submitted.dob).toLocaleDateString());
+    addLabelValue("Date of Birth", submitted.dob ? new Date(submitted.dob).toLocaleDateString() : "-");
     addLabelValue("Gender", submitted.gender);
     addLabelValue("Address", submitted.address || "-");
     addLabelValue("City", submitted.city || "-");
@@ -133,7 +162,6 @@ const ExamForm = () => {
       doc.text(edu.yearOfPassing || "-", colX[2], y);
       doc.text(edu.percentageOrCGPA || "-", colX[3], y);
       y += 7;
-      // Add page break if near bottom
       if (y > 280) {
         doc.addPage();
         y = 20;
@@ -161,7 +189,8 @@ const ExamForm = () => {
           <InfoRow label="Email" value={submitted.emailId} />
           <InfoRow label="Mobile Number" value={submitted.mobileNumber} />
           <InfoRow label="Category" value={submitted.category} />
-          <InfoRow label="Date of Birth" value={new Date(submitted.dob).toLocaleDateString()} />
+          {/* <InfoRow label="Date of Birth" value={submitted.dob ? new Date(submitted.dob).toLocaleDateString() : "-"} /> */}
+          <InfoRow label="Date of Birth" value={formatDateDDMMYYYY(submitted.dob)} />
           <InfoRow label="Gender" value={submitted.gender} />
           <InfoRow label="Address" value={submitted.address || "-"} />
           <InfoRow label="City" value={submitted.city || "-"} />
@@ -202,13 +231,14 @@ const ExamForm = () => {
 
   return (
     <>
-<div className="w-full px-4 mt-6 flex justify-end">
-      <Link to="/exam" className="w-full md:w-auto">
-        <button className="w-full md:w-60 bg-emerald-600 hover:bg-emerald-700 text-white text-base font-semibold px-6 py-3 rounded-xl shadow-lg transition duration-300">
-          Start Exam
-        </button>
-      </Link>
-    </div>
+      <div className="w-full px-4 mt-6 flex justify-end">
+        <Link to="/exam" className="w-full md:w-auto">
+          <button className="w-full md:w-60 bg-emerald-600 hover:bg-emerald-700 text-white text-base font-semibold px-6 py-3 rounded-xl shadow-lg transition duration-300">
+            Start Exam
+          </button>
+        </Link>
+      </div>
+
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto mt-12 p-12 bg-white rounded-xl shadow-xl border border-gray-300">
         <h2 className="text-2xl md:text-3xl font-semibold text-indigo-700 mb-10 text-center tracking-tight">
           Exam Registration Form
@@ -218,7 +248,14 @@ const ExamForm = () => {
           <Input label="Candidate Name" name="candidateName" value={form.candidateName} onChange={handleChange} />
           <Input label="Father's Name" name="fatherName" value={form.fatherName} onChange={handleChange} />
           <Input label="Mother's Name" name="motherName" value={form.motherName} onChange={handleChange} />
-          <Input label="Date of Birth" name="dateOfBirth" type="date" value={form.dateOfBirth} onChange={handleChange} />
+          <Input
+            label="Date of Birth"
+            name="dateOfBirth"
+            type="text"  // Changed to text from date
+            value={form.dateOfBirth}
+            onChange={handleChange}
+            placeholder="DD-MM-YYYY"
+          />
           <Select label="Gender" name="gender" value={form.gender} onChange={handleChange} options={["Male", "Female", "Other"]} />
           <Select label="Category" name="category" value={form.category} onChange={handleChange} options={["General", "OBC", "SC", "ST", "Other"]} />
           <Input label="Mobile Number" name="mobileNumber" type="tel" value={form.mobileNumber} onChange={handleChange} />

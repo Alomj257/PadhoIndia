@@ -9,6 +9,7 @@ import ImageGallery from '../components/common/ImageGallery'
 import FacilitiesText from '../components/common/FacilitiesText'
 import EducationOverview from '../components/common/EducationOverview'
 import ScholarshipCupFlow from '../components/common/ScholarshipCupFlow'
+import AutoPlayVideo from '../components/common/AutoPlayVideo'
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     <div>
         <>
         <Hero/>
+        <AutoPlayVideo/>
         <FacilitiesText/>
         <Facilities/>
         <ClassSelection/>

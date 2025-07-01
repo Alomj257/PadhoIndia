@@ -78,10 +78,23 @@ const Exam = () => {
   };
 
   const handleStart = async () => {
+    // Validate DOB format: DD-MM-YYYY
+    const dobRegex = /^(\d{2})-(\d{2})-(\d{4})$/;
+    if (!dobRegex.test(dob)) {
+      alert("Please enter Date of Birth in DD-MM-YYYY format");
+      return;
+    }
+
+    const [, dd, mm, yyyy] = dob.match(dobRegex);
+    // Optionally, add more validations on day/month ranges here
+
+    // Convert to ISO format YYYY-MM-DD
+    const formattedDob = `${yyyy}-${mm}-${dd}`;
+
     try {
       const res = await verifyApplication({
         applicationNumber,
-        dob,
+        dob: formattedDob,
       });
 
       if (res.data.success) {
@@ -135,7 +148,8 @@ const Exam = () => {
                 required
               />
               <input
-                type="date"
+                type="text"
+                placeholder="DD-MM-YYYY"
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
                 className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-600"
