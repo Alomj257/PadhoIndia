@@ -36,9 +36,11 @@ const Hero = () => {
               alt="Cup"
               className="w-[100px] h-auto object-contain mb-2"
             />
-            <span className="text-white px-6 py-2 font-bold text-lg animate-blinkBg">
-              Scholarship Cup
-            </span>
+            <Link to="/exam-registration">
+              <span className="text-white px-6 py-2 font-bold text-lg animate-blinkBg">
+                Scholarship Cup
+              </span>
+            </Link>
           </div>
 
           {/* Buttons */}
@@ -62,10 +64,10 @@ const Hero = () => {
               </button>
             </Link>
 
-            <Link to="/exam-registration">
-            <button className="min-w-[20rem] text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
-              Exam Competition System
-            </button>
+            <Link to="/">
+              <button className="min-w-[20rem] text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
+                Exam Competition System
+              </button>
             </Link>
           </div>
         </div>
