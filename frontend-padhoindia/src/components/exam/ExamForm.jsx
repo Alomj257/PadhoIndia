@@ -26,16 +26,6 @@ const ExamForm = () => {
   const [submitted, setSubmitted] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e, index, field) => {
-    if (["qualification", "boardOrUniversity", "yearOfPassing", "percentageOrCGPA"].includes(field)) {
-      const updatedEducation = [...form.educationDetails];
-      updatedEducation[index][field] = e.target.value;
-      setForm({ ...form, educationDetails: updatedEducation });
-    } else {
-      setForm({ ...form, [e.target.name]: e.target.value });
-    }
-  };
-
   const addEducationRow = () => {
     setForm({
       ...form,
@@ -176,6 +166,7 @@ const ExamForm = () => {
 
     doc.save(`Application_${submitted.applicationNumber}.pdf`);
   };
+  
 
   if (submitted) {
     return (
@@ -229,6 +220,32 @@ const ExamForm = () => {
     );
   }
 
+  const handleChange = (e, index, field) => {
+  const { name, value } = e.target;
+
+  if (name === "dateOfBirth") {
+    // Allow only digits and dashes, and auto-insert dash at correct places
+    let cleanValue = value.replace(/[^\d]/g, "");
+
+    if (cleanValue.length > 2 && cleanValue.length <= 4) {
+      cleanValue = cleanValue.slice(0, 2) + "-" + cleanValue.slice(2);
+    } else if (cleanValue.length > 4) {
+      cleanValue = cleanValue.slice(0, 2) + "-" + cleanValue.slice(2, 4) + "-" + cleanValue.slice(4, 8);
+    }
+
+    setForm({ ...form, dateOfBirth: cleanValue });
+    return;
+  }
+
+  if (["qualification", "boardOrUniversity", "yearOfPassing", "percentageOrCGPA"].includes(field)) {
+    const updatedEducation = [...form.educationDetails];
+    updatedEducation[index][field] = e.target.value;
+    setForm({ ...form, educationDetails: updatedEducation });
+  } else {
+    setForm({ ...form, [name]: value });
+  }
+};
+
   return (
     <>
       <div className="w-full px-4 mt-6 flex justify-end">
@@ -249,13 +266,14 @@ const ExamForm = () => {
           <Input label="Father's Name" name="fatherName" value={form.fatherName} onChange={handleChange} />
           <Input label="Mother's Name" name="motherName" value={form.motherName} onChange={handleChange} />
           <Input
-            label="Date of Birth"
-            name="dateOfBirth"
-            type="text"  // Changed to text from date
-            value={form.dateOfBirth}
-            onChange={handleChange}
-            placeholder="DD-MM-YYYY"
-          />
+  label="Date of Birth"
+  name="dateOfBirth"
+  type="text"
+  value={form.dateOfBirth}
+  onChange={handleChange}
+  placeholder="DD-MM-YYYY"
+/>
+
           <Select label="Gender" name="gender" value={form.gender} onChange={handleChange} options={["Male", "Female", "Other"]} />
           <Select label="Category" name="category" value={form.category} onChange={handleChange} options={["General", "OBC", "SC", "ST", "Other"]} />
           <Input label="Mobile Number" name="mobileNumber" type="tel" value={form.mobileNumber} onChange={handleChange} />
